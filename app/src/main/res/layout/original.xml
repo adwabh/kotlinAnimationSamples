@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="259dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/kat"
+        android:cropToPadding="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/kat"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="81dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        tools:layout_editor_absoluteY="65dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="243dp"
+        android:layout_height="273dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="सुचना अतित आवश्यकत उपलब्धता विचरविमर्श विभाग पहोचाना जानकारी संभव करता। लचकनहि अधिकांश सेऔर जिसकी अधिक हुआआदी एसेएवं ज्यादा दिनांक बलवान रखते खयालात सहायता आधुनिक खण्ड विकास
+
+आपको सीमित संपुर्ण अविरोधता एसलिये आधुनिक लेकिन सेऔर संभव शीघ्र ब्रौशर गयेगया बाजार लक्ष्य दुनिया व्याख्यान उशकी बनाए तरहथा। सम्पर्क हार्डवेर कराना वर्तमान जानकारी उपलब्धता लोगो ध्वनि जैसी अनुकूल निर्माण नवंबर चुनने पहोचने तकरीबन प्राप्त लिये"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+
+</android.support.constraint.ConstraintLayout>
