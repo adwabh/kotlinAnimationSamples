@@ -1,20 +1,52 @@
 package com.pb.learning.mykotlinapp
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.constraint.ConstraintSet
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.appcompat.widget.Toolbar
 import android.transition.TransitionManager
+import android.util.Log
+import android.view.View
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
-    var constraintLayoutMain:ConstraintLayout? = null
+    var constraintLayoutMain: ConstraintLayout? = null
+
+    private var defalutKeyFrameButton: Button? = null
+
+    private var keyFrameOneButton: Button? = null
+
+    private var toolbar : Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.original)
-        constraintLayoutMain = findViewById(R.id.constraintLayout_main )
+        setContentView(R.layout.activity_keyframe)
+        toolbar = findViewById(R.id.toolbar)
+        setActionBar(toolbar as? android.widget.Toolbar)
+        constraintLayoutMain = findViewById(R.id.constrainLayout )
+        defalutKeyFrameButton = findViewById(R.id.defaultKeyFrameButton)
+        keyFrameOneButton = findViewById(R.id.KeyFrameOneButton)
+        defalutKeyFrameButton?.setOnClickListener { v: View ->
+            if(v is Button){
+            Log.e("keyframe","default")
+                val constraintSet = ConstraintSet()
+                constraintSet.clone(this, R.layout.key_frame_default)
+                TransitionManager.beginDelayedTransition(constraintLayoutMain)
+                constraintSet.applyTo(constraintLayoutMain)
+            }
+        }
 
+        keyFrameOneButton?.setOnClickListener { v: View ->
+            if(v is Button){
+            Log.e("keyframe","keyframe1")
+                val constraintSet = ConstraintSet()
+                constraintSet.clone(this, R.layout.key_frame_one)
+                TransitionManager.beginDelayedTransition(constraintLayoutMain)
+                constraintLayoutMain ?: constraintSet.applyTo(constraintLayoutMain)
+            }
+        }
     }
 
     override fun onStart() {
@@ -23,9 +55,5 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume(){
         super.onResume()
-        val constraintSet = ConstraintSet()
-        constraintSet.clone(this,R.layout.activity_main)
-        TransitionManager.beginDelayedTransition(constraintLayoutMain)
-        constraintLayoutMain?:constraintSet.applyTo(constraintLayoutMain)
     }
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyKotlinApp</string>
+    <string name="appbar_scrolling_view_behavior">scroll</string>
 </resources>
