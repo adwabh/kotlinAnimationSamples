@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_keyframe)
         toolbar = findViewById(R.id.toolbar)
-        setActionBar(toolbar as? android.widget.Toolbar)
+        toolbar?:setSupportActionBar(toolbar)
         constraintLayoutMain = findViewById(R.id.constrainLayout )
         defalutKeyFrameButton = findViewById(R.id.defaultKeyFrameButton)
         keyFrameOneButton = findViewById(R.id.KeyFrameOneButton)
@@ -44,16 +44,8 @@ class MainActivity : AppCompatActivity() {
                 val constraintSet = ConstraintSet()
                 constraintSet.clone(this, R.layout.key_frame_one)
                 TransitionManager.beginDelayedTransition(constraintLayoutMain)
-                constraintLayoutMain ?: constraintSet.applyTo(constraintLayoutMain)
+                constraintSet.applyTo(constraintLayoutMain)
             }
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume(){
-        super.onResume()
     }
 }

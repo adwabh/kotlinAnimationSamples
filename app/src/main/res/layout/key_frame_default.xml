@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:layout_above="@+id/textViewOne"
                 android:scaleType="centerCrop"
-                android:src="@drawable/kat" />
+                android:src="@drawable/fruit_one" />
 
             <TextView
                 android:id="@+id/textViewOne"
@@ -61,7 +61,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:src="@drawable/kat"
+                android:src="@drawable/fruit_two"
                 android:scaleType="centerCrop"
                 android:id="@+id/imageViewTwo"
                 android:layout_width="match_parent"
